@@ -1,0 +1,176 @@
+/**
+*   BRAIN IMAGE LINK
+*   ==================================================================
+*   Simple Joomla Module useful to show a linked image on your site.
+*   ==================================================================
+*   Author: BRAINLEAF Communication | http://brainleaf.eu | (C) 2014
+*   License: GNU/GPL 3
+*   Version: 1.5.x
+*   Compatibility: Joomla 3.2.x or superior
+*   ===================================================================
+*/
+
+.brainImageLink-link {
+    display: block;
+}  
+
+.brainImageLink-link.overlay {
+    position: relative;
+} 
+
+.brainImageLink-link.overlay .brainImageLink-link-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-width: 0 0 5px 0;
+    border-style: solid;
+    -webkit-transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease;
+} 
+
+.brainImageLink-link.overlay:hover > .brainImageLink-link-hover {
+    opacity: 1;
+} 
+
+.brainImageLink-link.overlay .brainImageLink-link-hover-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    padding: 10px 0;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.brainImageLink-link.overlay .brainImageLink-link-hover-icon span {
+    width: auto!important;
+    height: auto!important;
+    font-size: 2em;
+    line-height: 1em;
+    margin: 0 0 10px 0;
+}
+
+.brainImageLink-link.overlay .brainImageLink-link-hover-text {
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* COLORS PRESETS */
+/* =========================================================================== */
+/* You can override this style with some rules on your css file */
+
+/* Black Preset */
+/* ================= */
+.brainImageLink-link.overlay.black .brainImageLink-link-hover {
+    background-color: rgba(0,0,0,0.5);
+    border-color: #ccc;
+} 
+.brainImageLink-link.overlay.black .brainImageLink-link-hover-icon {
+    background-color: #fff;
+    color: #333;
+}
+.brainImageLink-link.overlay.black .brainImageLink-link-hover-text {
+    color: #fff;
+}
+/* White Preset */
+/* ================= */
+.brainImageLink-link.overlay.white .brainImageLink-link-hover {
+    background-color: rgba(255,255,255,0.5);
+    border-color: #ccc;
+} 
+.brainImageLink-link.overlay.white .brainImageLink-link-hover-icon {
+    background-color: #000;
+    color: #fff;
+}
+.brainImageLink-link.overlay.white .brainImageLink-link-hover-text {
+    color: #333;
+}
+/* Cyan Preset */
+/* ================= */
+.brainImageLink-link.overlay.cyan .brainImageLink-link-hover {
+    background-color: rgba(50, 199, 199, 0.5);
+    border-color: #32c7c7;
+} 
+.brainImageLink-link.overlay.cyan .brainImageLink-link-hover-icon {
+    background-color: #32c7c7;
+    color: #fff;
+}
+.brainImageLink-link.overlay.cyan .brainImageLink-link-hover-text {
+    color: #fff;
+}
+/* Magenta Preset */
+/* ================= */
+.brainImageLink-link.overlay.magenta .brainImageLink-link-hover {
+    background-color: rgba(255, 0, 255, 0.5);
+    border-color: magenta;
+} 
+.brainImageLink-link.overlay.magenta .brainImageLink-link-hover-icon {
+    background-color: magenta;
+    color: #fff;
+}
+.brainImageLink-link.overlay.magenta .brainImageLink-link-hover-text {
+    color: #fff;
+}
+
+/* Black Transparent Preset */
+/* ================= */
+.brainImageLink-link.overlay.black-transparent .brainImageLink-link-hover {
+    background-color: transparent;
+    border-color: #000;
+} 
+.brainImageLink-link.overlay.black-transparent .brainImageLink-link-hover-icon {
+    background-color: transparent;
+    color: #000;
+}
+.brainImageLink-link.overlay.black-transparent .brainImageLink-link-hover-text {
+    color: #000;
+}
+
+/* White Transparent Preset */
+/* ================= */
+.brainImageLink-link.overlay.white-transparent .brainImageLink-link-hover {
+    background-color: transparent;
+    border-color: #ccc;
+} 
+.brainImageLink-link.overlay.white-transparent .brainImageLink-link-hover-icon {
+    background-color: transparent;
+    color: #fff;
+}
+.brainImageLink-link.overlay.white-transparent .brainImageLink-link-hover-text {
+    color: #fff;
+}
+
+/* Magenta Transparent Preset */
+/* ================================== */
+.brainImageLink-link.overlay.magenta-transparent .brainImageLink-link-hover {
+    background-color: transparent;
+    border-color: magenta;
+} 
+.brainImageLink-link.overlay.magenta-transparent .brainImageLink-link-hover-icon {
+    background-color: transparent;
+    color: magenta;
+}
+.brainImageLink-link.overlay.magenta-transparent .brainImageLink-link-hover-text {
+    color: magenta;
+}
+
+/* Cyan Transparent Preset */
+/* ================================== */
+.brainImageLink-link.overlay.cyan-transparent .brainImageLink-link-hover {
+    background-color: transparent;
+    border-color: #32c7c7;
+} 
+.brainImageLink-link.overlay.cyan-transparent .brainImageLink-link-hover-icon {
+    background-color: transparent;
+    color: #32c7c7;
+}
+.brainImageLink-link.overlay.cyan-transparent .brainImageLink-link-hover-text {
+    color: #32c7c7;
+}

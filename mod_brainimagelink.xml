@@ -1,0 +1,328 @@
+<!--
+*   @package BrainImageLink
+*   @subpackage Modules
+*   @link http://www.brainleaf.eu
+*   @license GNU/GPL, see LICENSE.php
+*
+*   BRAIN IMAGE LINK
+*   ==================================================================
+*   Simple Joomla Module useful to show a linked image on your site.
+*   ==================================================================
+*   Author: BRAINLEAF Communication | http://brainleaf.eu | (C) 2014
+*   License: GNU/GPL 3
+*   Version: 1.5.x
+*   Compatibility: Joomla 3.2.x or superior
+*   ===================================================================
+-->
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.3"
+	client="site"
+	method="upgrade">
+    
+    <name>Brain Image Link</name>
+    <author>BRAINLEAF Communication</author>
+    <version>1.5.0</version>
+    <description>Simple module to show an image linked to an external or internal page.</description>
+    <files>
+        <filename module="mod_brainimagelink">mod_brainimagelink.php</filename>
+		<filename>mod_brainimagelink.xml</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <folder>assets</folder>
+    </files>
+	<languages>
+		<language tag="it-IT">language/it-IT/it-IT.mod_brainimagelink.ini</language>
+		<language tag="it-IT">language/it-IT/it-IT.mod_brainimagelink.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_brainimagelink.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_brainimagelink.sys.ini</language>
+	</languages>
+	
+<config>
+	<fields name="params">
+		<fieldset name="basic">
+			
+			<!-- MODULE SETTINGS -->
+			<!-- ####################################################################### -->
+		
+			<field name="moduleclass_sfx" type="text"  default="" label="Module Class Suffix" description="" />
+			
+            <field type="spacer" name="mod_brainimagelink_link-spacer" class="text" label="MOD_BRAINIMAGELINK_LINK-SPACER" />
+			<field 
+				name="mod_brainimagelink_image" 
+				type="media" 
+				directory="" 
+				label="MOD_BRAINIMAGELINK_IMAGE" 
+				description="MOD_BRAINIMAGELINK_IMAGE_DESC" 
+				required="true"
+			/>
+			
+			<field 
+				name="mod_brainimagelink_image-alt" 
+				type="text" 
+				label="MOD_BRAINIMAGELINK_IMAGE-ALT" 
+				description="MOD_BRAINIMAGELINK_IMAGE-ALT_DESC"
+			/>
+            
+            <field 
+				name="mod_brainimagelink_link-kind" 
+				type="radio" 
+				default="1" 
+                class="btn-group"
+                labelclass="control-label"
+				label="MOD_BRAINIMAGELINK_LINK-KIND" 
+				description="MOD_BRAINIMAGELINK_LINK-KIND_DESC">
+			  	
+			  		<option value="1">MOD_BRAINIMAGELINK_LINK-KIND_OPT-1</option>
+			  		<option value="2">MOD_BRAINIMAGELINK_LINK-KIND_OPT-2</option>
+			  		
+			</field>
+			
+            <field 
+                   name="mod_brainimagelink_link-int" 
+                   type="menuitem" 
+                   label="MOD_BRAINIMAGELINK_LINK-INT" 
+                   description="MOD_BRAINIMAGELINK_LINK-INT_DESC" 
+            />
+            
+			<field 
+				name="mod_brainimagelink_link-ext" 
+				type="url" 
+				label="MOD_BRAINIMAGELINK_LINK-EXT" 
+				description="MOD_BRAINIMAGELINK_LINK-EXT_DESC"  
+			/>
+			
+			<field 
+				name="mod_brainimagelink_link-title" 
+				type="text" 
+				label="MOD_BRAINIMAGELINK_LINK-TITLE" 
+				description="MOD_BRAINIMAGELINK_LINK-TITLE_DESC"
+			/>
+            
+            <field 
+				name="mod_brainimagelink_link-open" 
+				type="list" 
+				default="0" 
+				label="MOD_BRAINIMAGELINK_LINK-OPEN" 
+				description="MOD_BRAINIMAGELINK_LINK-OPEN_DESC">
+			  	
+			  		<option value="0">MOD_BRAINIMAGELINK_LINK-OPEN_OPT-1</option>
+			  		<option value="1">MOD_BRAINIMAGELINK_LINK-OPEN_OPT-2</option>
+			  		
+			</field>
+            
+            <field 
+				name="mod_brainimagelink_link-tooltip" 
+				type="radio" 
+                class="btn-group"
+                labelclass="control-label"
+				default="0" 
+				label="MOD_BRAINIMAGELINK_TOOLTIP" 
+				description="MOD_BRAINIMAGELINK_TOOLTIP_DESC">
+				
+				  	<option value="0">JNO</option>
+				  	<option value="1">JYES</option>
+			  	
+			</field>
+            
+            
+            <field 
+				name="mod_brainimagelink_link-relfollow" 
+				type="radio" 
+				default="0" 
+                class="btn-group"
+                labelclass="control-label"
+				label="MOD_BRAINIMAGELINK_LINK-RELFOLLOW" 
+				description="MOD_BRAINIMAGELINK_LINK-RELFOLLOW_DESC">
+			  	
+			  		<option value="0">JNO</option>
+			  		<option value="1">JYES</option>
+			  		
+			</field>
+            
+			<field type="spacer" name="mod_brainimagelink_image-spacer" class="text" label="MOD_BRAINIMAGELINK_IMG-SPACER" />
+			
+            <field 
+				name="mod_brainimagelink_image-size" 
+				type="radio" 
+				default="0" 
+				label="MOD_BRAINIMAGELINK_IMAGESIZE" 
+				description="MOD_BRAINIMAGELINK_IMAGESIZE_DESC">
+			  	
+			  		<option value="0">MOD_BRAINIMAGELINK_IMAGESIZE_OPT-1</option>
+			  		<option value="1">MOD_BRAINIMAGELINK_IMAGESIZE_OPT-2</option>
+			  		<option value="2">MOD_BRAINIMAGELINK_IMAGESIZE_OPT-3</option>
+			  		
+			</field>
+			
+            <field type="spacer" name="mod_brainimagelink_imagesizes-spacer" class="text" label="MOD_BRAINIMAGELINK_IMGSIZES-SPACER" />
+			
+            <field 
+				name="mod_brainimagelink_image-width" 
+				type="text" 
+				default="100" 
+				label="MOD_BRAINIMAGELINK_IMAGE-WIDTH" 
+				description="MOD_BRAINIMAGELINK_IMAGE-WIDTH_DESC"
+			/>
+			
+			<field 
+				name="mod_brainimagelink_image-height" 
+				type="text" 
+				default="auto" 
+				label="MOD_BRAINIMAGELINK_IMAGE-HEIGHT" 
+				description="MOD_BRAINIMAGELINK_IMAGE-HEIGHT_DESC"
+			/>
+            
+            <field type="spacer" name="mod_brainimagelink_texts-spacer" class="text" label="MOD_BRAINIMAGELINK_TEXTS-SPACER" />
+            
+            <field 
+                name="mod_brainimagelink_link-before" 
+                type="editor"
+                label ="MOD_BRAINIMAGELINK_TEXT-BEFORE" 
+                description = "MOD_BRAINIMAGELINK_TEXT-BEFORE_DESC"
+                width="300" 
+                filter="safehtml"
+                buttons="false" 
+            />
+            
+            <field 
+                name="mod_brainimagelink_link-after" 
+                type="editor"
+                label ="MOD_BRAINIMAGELINK_TEXT-AFTER" 
+                description = "MOD_BRAINIMAGELINK_TEXT-AFTER_DESC"
+                width="300" 
+                filter="safehtml"
+                buttons="false" 
+            />
+
+		</fieldset>
+        
+        <fieldset name="stylesettings" label="MOD_BRAINIMAGELINK_FIELDSET_STYLES">
+            <field type="spacer" name="mod_brainimagelink_styles-spacer" label="MOD_BRAINIMAGELINK_STYLES-SPACER" />
+            
+            <field 
+				name="mod_brainimagelink_link-style" 
+				type="list" 
+				default="default" 
+				label="MOD_BRAINIMAGELINK_STYLE" 
+				description="MOD_BRAINIMAGELINK_STYLE_DESC">
+				
+				  	<option value="default">Default</option>
+				  	<option value="overlay">Overlay</option>
+			  	
+			</field>
+            
+            <!-- Style "Overlay" -->
+            <field type="spacer" name="mod_brainimagelink_style-1-spacer" label="MOD_BRAINIMAGELINK_STYLE-1-SPACER" />
+			<field type="spacer" name="mod_brainimagelink_style-1-spacer-warning" label="MOD_BRAINIMAGELINK_STYLE-1-SPACER-WARNING" />
+            
+            <field 
+				name="mod_brainimagelink_style-1-colorpreset" 
+				type="list" 
+				default="black" 
+				label="MOD_BRAINIMAGELINK_STYLE-1-COLORPRESET" 
+				description="MOD_BRAINIMAGELINK_STYLE-1-COLORPRESET_DESC">
+				
+                    <option value="cyan">Cyan</option>
+                    <option value="cyan-transparent">Cyan/Transparent</option> 
+                    <option value="magenta">Magenta</option>
+                    <option value="magenta-transparent">Magenta/Transparent</option>
+                    <option value="black">Black</option> 
+                    <option value="black-transparent">Black/Transparent</option>
+                    <option value="white">White</option> 
+                    <option value="white-transparent">White/Transparent</option> 
+                    <option value="custom">Custom Colors</option> 
+			</field>
+            
+            <field 
+                name="mod_brainimagelink_style-1-hover-bgcolor" 
+                type="color" 
+                default="#000"
+                label="MOD_BRAINIMAGELINK_STYLE-1-HOVER-BGCOLOR"
+                description="MOD_BRAINIMAGELINK_STYLE-1-HOVER-BGCOLOR_DESC" 
+            />
+            
+            <field 
+                name="mod_brainimagelink_style-1-hover-opacity" 
+                type="integer" 
+                default="5" 
+                label="MOD_BRAINIMAGELINK_STYLE-1-HOVER-OPACITY"
+                description="MOD_BRAINIMAGELINK_STYLE-1-HOVER-OPACITY_DESC" 
+                first="0" 
+                last="10" 
+                step="1" 
+            />
+            
+            
+            <field 
+               name="mod_brainimagelink_style-1-icon-bgcolor" 
+               type="color" 
+               default="#fff"
+               label="MOD_BRAINIMAGELINK_STYLE-1-ICON-BGCOLOR"
+               description="MOD_BRAINIMAGELINK_STYLE-1-ICON-BGCOLOR_DESC" 
+            />
+            
+            <field 
+                name="mod_brainimagelink_style-1-icon-opacity" 
+                type="integer" 
+                default="5" 
+                label="MOD_BRAINIMAGELINK_STYLE-1-ICON-OPACITY"
+                description="MOD_BRAINIMAGELINK_STYLE-1-ICON-OPACITY_DESC" 
+                first="0" 
+                last="10" 
+                step="1" 
+            />
+            
+            <field 
+               name="mod_brainimagelink_style-1-icon-color" 
+               type="color" 
+               default="#333"
+               label="MOD_BRAINIMAGELINK_STYLE-1-ICON-COLOR"
+               description="MOD_BRAINIMAGELINK_STYLE-1-ICON-COLOR_DESC" 
+            />
+            
+            <field 
+               name="mod_brainimagelink_style-1-text-color" 
+               type="color" 
+               default="#fff"
+               label="MOD_BRAINIMAGELINK_STYLE-1-TEXT-COLOR"
+               description="MOD_BRAINIMAGELINK_STYLE-1-TEXT-COLOR_DESC" 
+            />
+            
+            <field 
+               name="mod_brainimagelink_style-1-bordercolor" 
+               type="color" 
+               default="#fff"
+               label="MOD_BRAINIMAGELINK_STYLE-1-BORDERCOLOR"
+               description="MOD_BRAINIMAGELINK_STYLE-1-BORDERCOLOR_DESC" 
+            />
+            
+            <field 
+               name="mod_brainimagelink_style-1-text" 
+               type="text" 
+               default=""
+               label="MOD_BRAINIMAGELINK_STYLE-1-TEXT"
+               description="MOD_BRAINIMAGELINK_STYLE-1-TEXT_DESC" 
+            />
+            
+            
+            
+		</fieldset>
+        
+        
+        <fieldset name="advanced">
+			<field 
+				name="layout" 
+				type="modulelayout" 
+				label="Layout" 
+				description="Choose a layout" 
+			/>
+		</fieldset>	
+	</fields>
+</config>
+</extension>
