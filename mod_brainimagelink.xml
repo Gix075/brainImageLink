@@ -1,21 +1,3 @@
-<!--
-*   @package BrainImageLink
-*   @subpackage Modules
-*   @link http://www.brainleaf.eu
-*   @license GNU/GPL, see LICENSE.php
-*
-*   BRAIN IMAGE LINK
-*   ==================================================================
-*   Simple Joomla Module useful to show a linked image on your site.
-*   ==================================================================
-*   Author: BRAINLEAF Communication | http://brainleaf.eu | (C) 2014
-*   License: GNU/GPL 3
-*   Version: 1.5.x
-*   Compatibility: Joomla 3.2.x or superior
-*   ===================================================================
--->
-
-
 <?xml version="1.0" encoding="utf-8"?>
 <extension
 	type="module"
