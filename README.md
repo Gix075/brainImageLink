@@ -24,3 +24,15 @@ There are two main tabs to use: *Module* and *Style Configuration*
 This is the main tab. Here you can configure the mandatory module fields.<br>
 Here you can choose the link kind (internal or external), insert the link url (or choose a menu item), select and/or update an image, set the *alt* and *title* attributes, activate or not the joomla tooltip, activate or deactivate the *rel='nofollow'* tag and much more.
 
+**Style Config Tab**
+This module offers you some different style: **default style** (that consits in a no-style module) and other styles, such as **Overlay** style.<br>
+For each non default style you can choose a color preset or make your own by the colors configuration.
+
+Language Warning
+==================
+The English language is under translation and now is only a duplicate of the italian file. 
+
+WARNING!
+==================
+**This module is at first version. Please help me to make it better as is possible. Any suggestions, critics and new ideas are welcome!**
+**Please report me any bugs you find.**
