@@ -1,5 +1,8 @@
 console.log('This would be the main JS file.');
 
 $(document).on('ready', function() {
-    $('#slider').owlCarousel();
+    $('#slider').owlCarousel({
+        navigation : true,
+        singleItem:true
+    });
 });
