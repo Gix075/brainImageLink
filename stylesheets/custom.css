@@ -19,6 +19,8 @@
 .custom-menu ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
+    margin: 40px 0;
 }
 
 .custom-menu ul li {
