@@ -4,7 +4,7 @@
 *   @package BrainImageLink
 *   @subpackage Modules
 *   @link http://www.brainleaf.eu
-*   @license GNU/GPL, see LICENSE.php
+*   @license GNU/GPL
 *
 *   BRAIN IMAGE LINK
 *   ==================================================================
@@ -16,7 +16,8 @@
 *   Compatibility: Joomla 3.2.x or superior
 *   ===================================================================
 */ 
- 
+
+defined('_JEXEC') or die('Restricted access');
  
 class brainImageLink {
 		
@@ -92,6 +93,36 @@ class brainImageLink {
 			$moduleData['tooltipClass'] = '';
 			$moduleData['tooltipData'] = '';
 		}
+        
+        // Overlay Icon - update 1.5.5
+        if($modparams['style']['icon']['active'] == 1) {
+            
+            $moduleData['iconActive'] = TRUE;
+            
+            if($modparams['style']['icon']['custom'] == 1) {
+                $framework = $modparams['style']['icon']['vendor'];
+                switch ($framework) {
+                    case "3":
+                        $icontag = "i";
+                        break;
+                    default:
+                        $icontag = "span";
+                }
+                $tagclass = $modparams['style']['icon']['tagclass'];
+                $iconMarkup = "<".$icontag." class=\"".$tagclass."\"></".$icontag.">";
+                
+                $moduleData['iconCSS'] = $modparams['cssIcons'][$framework];
+                $moduleData['iconMarkup'] = $iconMarkup;
+                
+            }else{
+                $moduleData['iconCSS'] = $modparams['cssIcons'][0];
+                $moduleData['iconMarkup'] = "<span class=\"icon-plus\"></span>";
+            }
+            
+        }else{
+            $moduleData['iconActive'] = FALSE;
+        }
+        
         
         // Custom Colors
         $hoverbg = implode(",",brainImageLink::hex2rgb($modparams['style']['hoverbgcolor']));

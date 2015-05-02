@@ -3,7 +3,7 @@
 *   @package BrainImageLink
 *   @subpackage Modules
 *   @link http://www.brainleaf.eu
-*   @license GNU/GPL, see LICENSE.php
+*   @license GNU/GPL
 *
 *   BRAIN IMAGE LINK
 *   ==================================================================
@@ -27,7 +27,7 @@ require_once( dirname(__FILE__).DIRECTORY_SEPARATOR.'helper.php' );
 
 $modparams = array();
 $modparams['css'] = "modules/mod_brainimagelink/assets/css/mod.brainimagelink.css";
-$modparams['cssIcons'] = "media/jui/css/icomoon.css";
+$modparams['cssIcons'] = array("media/jui/css/icomoon.css","modules/mod_brainimagelink/assets/css/bootstrap3-icons.css","//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"); // update 1.5.5 --> param changed from var to array 
 $modparams['image'] = $params->get('mod_brainimagelink_image');
 $modparams['alt'] = $params->get('mod_brainimagelink_image-alt');
 $modparams['size'] = $params->get('mod_brainimagelink_image-size');
@@ -55,7 +55,11 @@ $modparams['style']['hovertextcolor'] = $params->get('mod_brainimagelink_style-1
 $modparams['style']['bordercolor'] = $params->get('mod_brainimagelink_style-1-bordercolor');
 $modparams['style']['hovertext'] = $params->get('mod_brainimagelink_style-1-text'); 
     
-
+// update 1.5.5
+$modparams['style']['icon']['active'] = $params->get('mod_brainimagelink_icon-active');
+$modparams['style']['icon']['custom'] = $params->get('mod_brainimagelink_icon-custom');
+$modparams['style']['icon']['vendor'] = $params->get('mod_brainimagelink_icon-vendor');
+$modparams['style']['icon']['tagclass'] = $params->get('mod_brainimagelink_icon-tagclass');
     
     
 

@@ -1,6 +1,12 @@
 <?php
 
 /**
+*   @package BrainImageLink
+*   @subpackage Modules
+*   @link http://www.brainleaf.eu
+*   @license GNU/GPL
+*
+*
 *   BRAIN IMAGE LINK
 *   ==================================================================
 *   Simple Joomla Module useful to show a linked image on your site.
@@ -12,7 +18,12 @@
 *   ===================================================================
 */
 
-JFactory::getDocument()->addStyleSheet($modparams['cssIcons']);
+defined('_JEXEC') or die('Restricted access');
+
+if ($modData['iconActive'] == TRUE) {
+    JFactory::getDocument()->addStyleSheet($modData['iconCSS']);
+}
+
 JFactory::getDocument()->addStyleSheet($modparams['css']);
 
 $styleClass = $modparams['style']['name']." ".$modparams['style']['preset'];
@@ -49,7 +60,12 @@ $styleClass = $modparams['style']['name']." ".$modparams['style']['preset'];
         <div class="brainImageLink-link-hover">
             
             <div class="brainImageLink-link-hover-icon">
-                <span class="icon-plus"></span>
+                
+                <?php if ($modData['iconActive'] == TRUE): ?>
+                <!-- load icon if is active -->
+                <?php echo $modData['iconMarkup']; ?>
+                <?php endif; ?>
+                
                 <div class="brainImageLink-link-hover-text">
                     <?php echo $modparams['style']['hovertext']; ?>
                 </div>

@@ -7,8 +7,10 @@
     
     <name>Brain Image Link</name>
     <author>BRAINLEAF Communication</author>
-    <version>1.5.0</version>
+    <version>1.5.6</version>
     <description>Simple module to show an image linked to an external or internal page.</description>
+    <creationDate>02 May 2015</creationDate>
+    <license>GNU/GPL 3</license>
     <files>
         <filename module="mod_brainimagelink">mod_brainimagelink.php</filename>
 		<filename>mod_brainimagelink.xml</filename>
@@ -240,6 +242,61 @@
                 step="1" 
             />
             
+            <!-- 1.5.5 update -->
+            <!-- Icon activation, Icon Vendor and Icon tag selection added -->
+            
+            <field 
+				name="mod_brainimagelink_icon-active" 
+				type="radio" 
+				default="1" 
+                class="btn-group"
+                labelclass="control-label"
+				label="MOD_BRAINIMAGELINK_ICON-ACTIVE" 
+				description="MOD_BRAINIMAGELINK_ICON-ACTIVE_DESC">
+			  	
+			  		<option value="0">JNO</option>
+			  		<option value="1">JYES</option>
+			  		
+			</field>
+            
+            <field 
+				name="mod_brainimagelink_icon-custom" 
+				type="radio" 
+				default="0" 
+                class="btn-group"
+                labelclass="control-label"
+				label="MOD_BRAINIMAGELINK_ICON-CUSTOM" 
+				description="MOD_BRAINIMAGELINK_ICON-CUSTOM_DESC">
+			  	
+			  		<option value="0">JNO</option>
+			  		<option value="1">JYES</option>
+			  		
+			</field>
+            
+            <field 
+				name="mod_brainimagelink_icon-vendor" 
+				type="radio" 
+				default="0" 
+                class="btn-group"
+                labelclass="control-label"
+				label="MOD_BRAINIMAGELINK_ICON-VENDOR" 
+				description="MOD_BRAINIMAGELINK_ICON-VENDOR_DESC">
+			  	
+			  		<option value="0">MOD_BRAINIMAGELINK_ICON-VENDOR_OPT-1</option>
+			  		<option value="1">MOD_BRAINIMAGELINK_ICON-VENDOR_OPT-2</option>
+                    <option value="2">MOD_BRAINIMAGELINK_ICON-VENDOR_OPT-3</option>
+			  		
+			</field>
+            
+            <field 
+				name="mod_brainimagelink_icon-tagclass" 
+				type="text" 
+				default="glyphicon glyphicon-eye-open" 
+				label="MOD_BRAINIMAGELINK_ICON-TAGCLASS" 
+				description="MOD_BRAINIMAGELINK_ICON-TAGCLASS_DESC"
+			/>
+            
+            <!-- /1.5.5 update -->
             
             <field 
                name="mod_brainimagelink_style-1-icon-bgcolor" 
